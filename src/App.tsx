@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
 
+//components
+
+
+const data =[
+  {id:1, name:"burak", email:"burak@gmail.com", age:20, color:"green"},
+  {id:2, name:"aslı", email:"aslı@gmail.com", age:20, color:"red"},
+  {id:3, name:"arda", email:"arda@gmail.com", age:20, color:"blue"},
+  {id:4, name:"selman", email:"selman@gmail.com", age:20, color:"pink"}
+]
+
 function App() {
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Empty Project</h1>
     </div>
   );
 }
