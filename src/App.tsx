@@ -1,21 +1,23 @@
-import React,{useState} from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import TodosContextProvider from "./store/todos-context";
 
 //components
+import Todos from "./components/Todos/Todos";
+import NewTodo from "./components/NewTodo/NewTodo";
 
-
-const data =[
-  {id:1, name:"burak", email:"burak@gmail.com", age:20, color:"green"},
-  {id:2, name:"aslı", email:"aslı@gmail.com", age:20, color:"red"},
-  {id:3, name:"arda", email:"arda@gmail.com", age:20, color:"blue"},
-  {id:4, name:"selman", email:"selman@gmail.com", age:20, color:"pink"}
-]
+// Types
+export type Todo = {
+  text: string;
+  id: string;
+};
 
 function App() {
- 
   return (
     <div className="App">
-      <h1>Empty Project</h1>
+      <h1>Basic Todo APP</h1>
+      <NewTodo onAddTodo={AddTodoHandler}></NewTodo>
+      <Todos items={todos} onDeleteTodo={DeleteTodoHandler}></Todos>
     </div>
   );
 }
