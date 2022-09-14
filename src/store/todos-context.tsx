@@ -1,11 +1,15 @@
 import React, { useContext, useState } from "react";
-import type { Todo } from "../App";
 
-// type
-type contextType = {
+// Types
+export type Todo = {
+  text: string;
+  id: string;
+};
+
+export type contextType = {
   items: Todo[];
   addTodo: (text: string) => void;
-  removeTodo: (id: string) => void;
+  deleteTodo: (id: string) => void;
 };
 
 export const TodosContext = React.createContext<{
@@ -14,8 +18,8 @@ export const TodosContext = React.createContext<{
 }>({
   // those are just initializing empty array and functions but not types
   items: [],
-  addtodo: () => {},
-  removeTodo: (id: string) => {},
+  addTodo: () => {},
+  deleteTodo: (id: string) => {},
 });
 
 const TodosContextProvider: React.FC = (props) => {
@@ -38,8 +42,8 @@ const TodosContextProvider: React.FC = (props) => {
   const contextValue: contextType = {
     // type of this contextValue must be the same with TodosContext -> in line 6-9
     items: todos,
-    addtodo: AddTodoHandler,
-    removeTodo: RemoveTodoHandler,
+    addTodo: AddTodoHandler,
+    deleteTodo: DeleteTodoHandler,
   };
 
   return (
