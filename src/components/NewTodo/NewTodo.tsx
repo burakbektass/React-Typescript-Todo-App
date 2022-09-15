@@ -3,6 +3,7 @@ import {TodosContext} from '../../store/todos-context';
 import "./NewTodo.scss";
 
 const NewTodo: React.FC = () => {
+  
   const todosCtx = useContext(TodosContext);
   const inputRef = useRef<HTMLInputElement>(null);
   const submitHandler = (event: React.FormEvent) => {
@@ -12,7 +13,7 @@ const NewTodo: React.FC = () => {
       // throw new Error
       return;
     }
-
+  
     todosCtx.addTodo(enteredText);
   };
 

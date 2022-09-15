@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import TodosContextProvider from "./store/todos-context";
 
@@ -9,9 +9,10 @@ import NewTodo from "./components/NewTodo/NewTodo";
 function App() {
   return (
     <TodosContextProvider>
-      <h1>Basic Todo APP</h1>
-      <NewTodo ></NewTodo>
-      <Todos ></Todos>
+      <div className="App">
+        <NewTodo />
+        <Todos />
+      </div>
     </TodosContextProvider>
   );
 }

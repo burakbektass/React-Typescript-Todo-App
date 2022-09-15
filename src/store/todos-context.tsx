@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 
 // Types
 export type Todo = {
@@ -6,23 +6,20 @@ export type Todo = {
   id: string;
 };
 
-export type contextType = {
+type contextType = {
   items: Todo[];
   addTodo: (text: string) => void;
   deleteTodo: (id: string) => void;
 };
 
-export const TodosContext = React.createContext<{
-  //this is type definition
-  contextType;
-}>({
+export const TodosContext = React.createContext<contextType>({
   // those are just initializing empty array and functions but not types
   items: [],
   addTodo: () => {},
   deleteTodo: (id: string) => {},
 });
 
-const TodosContextProvider: React.FC = (props) => {
+const TodosContextProvider: React.FC<PropsWithChildren<{}>> = (props) => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const AddTodoHandler = (text: string) => {
