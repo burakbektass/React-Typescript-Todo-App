@@ -11,6 +11,6 @@ What did I practice ?
 
               
 To use it;
-1- git clone https://github.com/burakbektass/React-Typescript-Todo-App.git
-2- "npm install" in project directory to setup .json file
-3- "npm start" 
+* 1- git clone https://github.com/burakbektass/React-Typescript-Todo-App.git
+* 2- "npm install" in project directory to setup .json file
+* 3- "npm start" 
